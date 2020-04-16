@@ -63,6 +63,29 @@
                     "Content-Type": "application/json"
                 }
             }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/user?id=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                    "username": "Gerard",
+                    "name": "Gerard",
+                    "surname": "Botes",
+                    "email": "Gerard.Botes@gmail.com",
+                    "institutionname": "University of Pretoria",
+                    "adsremaining": "3",
+                    "message": "This user exists",
+                    "gotuser": true
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
         }
     ]
 }
