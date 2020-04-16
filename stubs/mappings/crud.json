@@ -1,0 +1,70 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/userlogin?username=Gerard&password=1234567"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id":"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                    "username":"Gerard",
+                    "userloggedin":true,
+                    "institution":"University of Pretoria",
+                    "message":"Welcome! Gerard"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        }, 
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/userlogin?username=Gerard&password=1111111"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id":"",
+                    "username":"Gerard",
+                    "userloggedin":false,
+                    "institution":"",
+                    "message":"Wrong username and password combination for user: Gerard !"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "username": "John",
+                        "password": "johnnyboy",
+                        "name": "John",
+                        "surname":"Johnson",
+                        "email":"john@gmail.com",
+                        "institutionname": "University of Pretoria"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "usercreated": "true",
+                    "username": "John",
+                    "id": "3c537659-f57a-4e50-8902-977842dcddf7",
+                    "message": "User Successfully Created!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        }
+    ]
+}
+
+
