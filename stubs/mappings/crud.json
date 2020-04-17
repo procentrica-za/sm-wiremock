@@ -86,7 +86,142 @@
                     "Content-Type": "application/json"
                 }
             }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/user?id=afd7e416-0596-44f1-96b4-c63b0bab883a"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "username": "none",
+                    "name": "none",
+                    "surname": "none",
+                    "email": "none",
+                    "institutionname": "none",
+                    "adsremaining": "none",
+                    "message": "This User does not exist",
+                    "gotuser": false
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+                    "id": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                    "username": "Gerard",
+                    "name": "Gerard",
+                    "surname": "Reineer",
+                    "email": "Gerard.Botes1@gmail.com",
+                    "institutionname": "University of Pretoria"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "userupdated": true,
+                    "message": "User Successfully Updated"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "id" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "username" : "Jack",
+                        "name" : "working postman",
+                        "surname" : "surname postman",
+                        "email" : "John.Smit@gmail.com",
+                        "institutionname" : "University of Pretoria"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "userupdated": false,
+                    "message": "This Username Already Exists!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "id" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "username" : "Gerards",
+                        "name" : "working postman",
+                        "surname" : "surname postman",
+                        "email" : "jack@gmail.com",
+                        "institutionname" : "University of Pretoria"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "userupdated": false,
+                    "message": "This Email Already Exists!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/user?id=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "userdeleted": true,
+                    "id": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                    "message": "User Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/user?id=afd7e416-0596-44f1-96b4-c63b0bab883a"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "userdeleted": false,
+                    "id": "afd7e416-0596-44f1-96b4-c63b0bab883a",
+                    "message": "Unable to Delete User!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
         }
+        
     ]
 }
 
