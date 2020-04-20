@@ -66,6 +66,62 @@
         },
         {
             "request": {
+                "method": "POST",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "username" : "Gerard",
+                        "password" : "123456",
+                        "name" : "Jonathan",
+                        "surname" : "Wakefield",
+                        "email" : "jonny@gmail.com",
+                        "institutionname" : "University of Johannesburg"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "usercreated": "false",
+                    "username": "",
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "This Username Already Exists!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/user",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "username" : "Frank",
+                        "password" : "123456",
+                        "name" : "Jonathan",
+                        "surname" : "Wakefield",
+                        "email" : "Gerard.Botes@gmail.com",
+                        "institutionname" : "University of Johannesburg"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "usercreated": "false",
+                    "username": "",
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "This Email Already Exists!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
                 "method": "GET",
                 "url": "/crud/user?id=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
             },
@@ -317,6 +373,302 @@
                     "email": "None",
                     "password": "None",
                     "message": "A new password cannot be granted at this time as an appropriate email address has not been provided"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/chat",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "sellerid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "buyerid" :  "1b759471-6513-4509-9f7d-4e9160e7c505",
+                        "advertisementtype" : "TXB",
+                        "advertisementid" : "a6feb6c0-9349-41f7-ac8e-96e0e0c28148"
+                        
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "chatposted": true,
+                    "chatid": "560a8a71-339d-4769-ba8b-27bdcfde4e59",
+                    "message": "Chat Successfully Started!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/chat",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "sellerid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "buyerid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "advertisementtype" : "TXB",
+                        "advertisementid" : "d17e784f-f5f7-4bc8-ad34-3170bc735fc7"
+                        
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "chatposted": false,
+                    "chatid": "9924e14c-fa0c-4ae3-9a29-48d3d6f40172",
+                    "message": "Unable to start chat!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/chat?id=9924e14c-fa0c-4ae3-9a29-48d3d6f40172"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "chatposted": true,
+                    "message": "Chat Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/chat?id=b9bd5387-894c-4a5f-9f12-f37555276e74"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "chatposted": false,
+                    "message": "Unable to Delete Chat!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/chats?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "activechats": [
+                        {
+                            "chatid": "9924e14c-fa0c-4ae3-9a29-48d3d6f40172",
+                            "advertisementtype": "TXB",
+                            "advertisementid": "d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+                            "username": "Gerard",
+                            "price": "450.00",
+                            "title": "Business Strategy Principles",
+                            "description": "This is business strategy principles, contact now to secure this book which is in amazing condition",
+                            "message": "Hello there, does the price work well for you?",
+                            "messagedate": "2020-04-20 13:1",
+                            "isread": "false",
+                            "messageauthor": "Jack"
+                        },
+                        {
+                            "chatid": "b08fda22-aa4f-4abc-a8ad-4edb06293212",
+                            "advertisementtype": "ACD",
+                            "advertisementid": "81dc2379-aeb9-4279-865b-bdb46edc5db5",
+                            "username": "James",
+                            "price": "4500.00",
+                            "title": "Appartement",
+                            "description": "Cozy Hatfield accomodation, right by the gautrain.",
+                            "message": "Hello Jack, I would like to get some more details about the hatfield accomodation.",
+                            "messagedate": "2020-04-20 13:12",
+                            "isread": "false",
+                            "messageauthor": "James"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/chats?userid=b9bd5387-894c-4a5f-9f12-f37555276e74"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "activechats": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&&chatid=9924e14c-fa0c-4ae3-9a29-48d3d6f40172"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "messages": [
+                        {
+                            "messageid": "1afd7f30-d8bc-4f6a-918a-8998d8a5c333",
+                            "username": "Gerard",
+                            "message": "Hi, i am interested in your ad",
+                            "messagedate": "2020-04-20 13:12"
+                        },
+                        {
+                            "messageid": "d604b46b-edd4-4273-bb6d-9712907fdce4",
+                            "username": "Jack",
+                            "message": "Hello there, does the price work well for you?",
+                            "messagedate": "2020-04-20 13:1"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&&chatid=bab6a1d9-327c-4594-9e8e-2256324b1ab4"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "messages": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/message",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "chatid" : "9924e14c-fa0c-4ae3-9a29-48d3d6f40172",
+                        "authorid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "message" : "No it does not, how about a 10% reduction?"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "messages": [
+                        {
+                            "messageid": "1afd7f30-d8bc-4f6a-918a-8998d8a5c333",
+                            "username": "Gerard",
+                            "message": "Hi, i am interested in your ad",
+                            "messagedate": "2020-04-20 13:12"
+                        },
+                        {
+                            "messageid": "d604b46b-edd4-4273-bb6d-9712907fdce4",
+                            "username": "Jack",
+                            "message": "Hello there, does the price work well for you?",
+                            "messagedate": "2020-04-20 13:1"
+                        },
+                        {
+                            "messageid": "24504e6f-9b33-4792-9a27-f3fc897485a6",
+                            "username": "Gerard",
+                            "message": "No it does not, how about a 10% reduction?",
+                            "messagedate": "2020-04-20 13:26"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/message",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "chatid" : "9924e14c-fa0c-4ae3-9a29-48d3d6f40172",
+                        "authorid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "message" : "No it does not, how about a 10% reduction?"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "messages": [
+                        {
+                            "messageid": "1afd7f30-d8bc-4f6a-918a-8998d8a5c333",
+                            "username": "Gerard",
+                            "message": "Hi, i am interested in your ad",
+                            "messagedate": "2020-04-20 13:12"
+                        },
+                        {
+                            "messageid": "d604b46b-edd4-4273-bb6d-9712907fdce4",
+                            "username": "Jack",
+                            "message": "Hello there, does the price work well for you?",
+                            "messagedate": "2020-04-20 13:1"
+                        },
+                        {
+                            "messageid": "24504e6f-9b33-4792-9a27-f3fc897485a6",
+                            "username": "Gerard",
+                            "message": "No it does not, how about a 10% reduction?",
+                            "messagedate": "2020-04-20 13:26"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/unreadchats?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "unreadmessages": true
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/unreadchats?userid=5c799cdc-c953-4821-9919-466b5efdee74"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "unreadmessages": false
                 }, 
                 "headers": {
                     "Content-Type": "application/json"
