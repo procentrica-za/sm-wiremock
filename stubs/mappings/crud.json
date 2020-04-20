@@ -523,7 +523,7 @@
         {
             "request": {
                 "method": "GET",
-                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&&chatid=9924e14c-fa0c-4ae3-9a29-48d3d6f40172"
+                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&chatid=9924e14c-fa0c-4ae3-9a29-48d3d6f40172"
             },
             "response": {
                 "status": 200,
@@ -551,53 +551,12 @@
         {
             "request": {
                 "method": "GET",
-                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&&chatid=bab6a1d9-327c-4594-9e8e-2256324b1ab4"
+                "url": "/crud/message?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&chatid=bab6a1d9-327c-4594-9e8e-2256324b1ab4"
             },
             "response": {
                 "status": 200,
                 "jsonBody": {
                     "messages": []
-                }, 
-                "headers": {
-                    "Content-Type": "application/json"
-                }
-            }
-        },
-        {
-            "request": {
-                "method": "POST",
-                "url": "/crud/message",
-                "bodyPatterns" : [ {
-                    "equalToJson" : {
-                        "chatid" : "9924e14c-fa0c-4ae3-9a29-48d3d6f40172",
-                        "authorid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
-                        "message" : "No it does not, how about a 10% reduction?"
-                    }
-                  } ]
-            },
-            "response": {
-                "status": 200,
-                "jsonBody": {
-                    "messages": [
-                        {
-                            "messageid": "1afd7f30-d8bc-4f6a-918a-8998d8a5c333",
-                            "username": "Gerard",
-                            "message": "Hi, i am interested in your ad",
-                            "messagedate": "2020-04-20 13:12"
-                        },
-                        {
-                            "messageid": "d604b46b-edd4-4273-bb6d-9712907fdce4",
-                            "username": "Jack",
-                            "message": "Hello there, does the price work well for you?",
-                            "messagedate": "2020-04-20 13:1"
-                        },
-                        {
-                            "messageid": "24504e6f-9b33-4792-9a27-f3fc897485a6",
-                            "username": "Gerard",
-                            "message": "No it does not, how about a 10% reduction?",
-                            "messagedate": "2020-04-20 13:26"
-                        }
-                    ]
                 }, 
                 "headers": {
                     "Content-Type": "application/json"
