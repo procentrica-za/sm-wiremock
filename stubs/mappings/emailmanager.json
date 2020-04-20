@@ -1,0 +1,50 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "/emailmanager/forgotpassword",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "toemail" : "Gerard.Botes@gmail.com",
+                        "subject" : "Forgot Password",
+                        "password" : "Your new password as requested is: GEWRVSCG",
+                        "message" : "A new password is being sent to you now, please check your email"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "message": "A new password is being sent to you now, please check your email"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/emailmanager/forgotpassword",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "toemail" : "None",
+                        "subject" : "Forgot Password",
+                        "password" : "Your new password as requested is: None",
+                        "message" : "A new password cannot be granted at this time as an appropriate email address has not been provided"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "message": "A new password cannot be granted at this time as an appropriate email address has not been provided"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        }       
+    ]
+}
