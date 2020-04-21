@@ -933,6 +933,66 @@
                     "Content-Type": "application/json"
                 }
             }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/buyer?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "average": "4.0"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/buyer?userid=974f4e0a-7551-40d1-aad5-afb30cd72884"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "average": "0.0"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/seller?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "average": "4.5"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/seller?userid=974f4e0a-7551-40d1-aad5-afb30cd72884"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "average": "0.0"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
         }
         
     ]
