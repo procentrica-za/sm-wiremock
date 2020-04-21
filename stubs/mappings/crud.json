@@ -627,7 +627,307 @@
             "response": {
                 "status": 200,
                 "jsonBody": {
-                    "unreadmessages": false
+                    "unreadmessages": false 
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/rate",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+
+                        "advertisementid" : "06abf31a-3165-48ad-87b3-75ff2a6c0225",
+                        "buyerid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "sellerid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "buyerrating" : "5",
+                        "buyercomments" : "This was a very good buyer, he gave no hassles."
+                        
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "buyerrated": true,
+                    "ratingid": "0a3e261c-ab23-4a95-8177-72d81714431b",
+                    "message": "Buyer sucessfully rated!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/rate",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+
+                        "advertisementid" : "d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+                        "buyerid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "sellerid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "buyerrating" : "3",
+                        "buyercomments" : "Took very long to respond and took over a month to pay me."
+                        
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "buyerrated": false,
+                    "ratingid": "00000000-0000-0000-0000-000000000000",
+                    "message": "Buyer has already been rated!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/rate",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+                        "ratingid" : "0a3e261c-ab23-4a95-8177-72d81714431b",
+                        "sellerrating" : "5",
+                        "sellercomments" : "Very good seller, he did everything by the book"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sellerrated": true,
+                    "message": "Seller sucessfully rated!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/rate",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+                        "ratingid" : "23c571a5-4004-4f98-ac65-d426e022f59a",
+                        "sellerrating" : "5",
+                        "sellercomments" : "Very good seller, he did everything by the book"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sellerrated": false,
+                    "message": "Seller has not been rated!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/rate?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "outstandingratings": [
+                        {
+                            "ratingid": "c524ab86-1d2c-4f7c-a958-348ffa7f625f",
+                            "username": "Gerard",
+                            "price": "500.00",
+                            "title": "Business Strategy Advanced",
+                            "description": "Business strategy advanced is the subject to do! get this amazing textbook now."
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/rate?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "outstandingratings": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/sellerrating?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "previousratings": [
+                        {
+                            "ratingid": "23c571a5-4004-4f98-ac65-d426e022f59a",
+                            "username": "Gerard",
+                            "rating": "4.00",
+                            "comment": "Lovely Guy"
+                        },
+                        {
+                            "ratingid": "efaa90bb-aa53-43ca-8ee2-3a5636579aee",
+                            "username": "Gerard",
+                            "rating": "5.00",
+                            "comment": "What a person to deal with he accepted cash too"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/sellerrating?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "previousratings": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/buyerrating?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "previousratings": [
+                        {
+                            "ratingid": "23c571a5-4004-4f98-ac65-d426e022f59a",
+                            "username": "Jack",
+                            "rating": "4.00",
+                            "comment": "What a person to deal with, he paid in cash too"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/buyerrating?userid=43c04a88-1e9a-41eb-81d4-ff57698927b5"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "previousratings": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/interest",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "userid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "advertisementid" : "d17e784f-f5f7-4bc8-ad34-3170bc735fc7"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "interestedbuyers": [
+                        {
+                            "username": "Gerard",
+                            "advertisementid": "d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+                            "advertisementtype": "TXB",
+                            "sellerid": "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                            "buyerid": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/interest",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "userid" : "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                        "advertisementid" : "b81d3ef5-9bf9-4f60-bd28-5404c647bab4"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "interestedbuyers": []
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/rating?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "outstandingratings": true
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/rating?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "outstandingratings": false
                 }, 
                 "headers": {
                     "Content-Type": "application/json"
