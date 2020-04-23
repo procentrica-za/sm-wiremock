@@ -993,9 +993,609 @@
                     "Content-Type": "application/json"
                 }
             }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/advertisement",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "userid": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "isselling" : "false",
+                        "advertisementtype": "TXB",
+                        "entityid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                        "price": "400",
+                        "description": "Mockwire Textbook Advertisement Add Test",
+                        "institution": "University of Pretoria"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementposted": true,
+                    "id": "ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c4",
+                    "message": "Advert Successfully Created!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/advertisement",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "userid": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "isselling" : "false",
+                        "advertisementtype": "TXB",
+                        "entityid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                        "price": "400",
+                        "description": "Mockwire Textbook Advertisement Add Test",
+                        "institution": "University of retoria"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementposted": false,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "Advert could not be added due to an internal error!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/textbook",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "modulecode": "OBS110",
+                        "name": "UnitTest Add Textbook",
+                        "edition": "1",
+                        "quality": "New",
+                        "author": "James Caroline"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "textbookadded": true,
+                    "id": "a92f76ac-ef77-4f5f-aa12-f42e77f169b5",
+                    "message": "Textbook Successfully Added!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/textbook",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "modulecode": "OBS10",
+                        "name": "UnitTest Add Textbook",
+                        "edition": "1",
+                        "quality": "New",
+                        "author": "James Caroline"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "textbookadded": false,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "Failed to add Textbook!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/tutor",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id" : "0d56865d-0e89-4e35-987d-c17fb29958f5",
+                        "modulecode": "OBS110",
+                        "subject": "Unit Test",
+                        "yearcompleted": "2012",
+                        "venue": "At Home",
+                        "notesincluded": "true",
+                        "terms": "R500 per lesson"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "tutoradded": true,
+                    "id": "0d56865d-0e89-4e35-987d-c17fb29958f5",
+                    "message": "Tutor Successfully Added!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/tutor",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id" : "0d56865d-0e89-4e35-987d-c17fb29958f5",
+                        "modulecode": "OBS10",
+                        "subject": "Unit Test",
+                        "yearcompleted": "2012",
+                        "venue": "At Home",
+                        "notesincluded": "true",
+                        "terms": "R500 per lesson"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "tutoradded": false,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "Failed to add Tutor!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/note",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id" : "2a5a47a9-97e0-499f-b0f1-afc1876a6d63",
+                    "modulecode" : "OBS110"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "noteadded": true,
+                    "id": "2a5a47a9-97e0-499f-b0f1-afc1876a6d63",
+                    "message": "Note Successfully Added!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/note",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id" : "2a5a47a9-97e0-499f-b0f1-afc1876a6d63",
+                        "modulecode" : "OB110"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "noteadded": false,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "Failed to add Note!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/accomodation",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id": "442cef2c-9828-4efc-a25a-842fe375838d",
+                        "accomodationtypecode": "APT",
+                        "institutionname": "University of Pretoria",
+                        "location": "16 Test Street",
+                        "distancetocampus": "5"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "accomodationadded": true,
+                    "id": "442cef2c-9828-4efc-a25a-842fe375838d",
+                    "message": "Accomodation Successfully Added!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/crud/accomodation",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { "id": "442cef2c-9828-4efc-a25a-842fe375838d",
+                        "accomodationtypecode": "APT",
+                        "institutionname": "University of retoria",
+                        "location": "16 Test Street",
+                        "distancetocampus": "5"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "accomodationadded": false,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "message": "Failed to add Accomodation!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/advertisement?id=ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c4"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementdeleted": true,
+                    "id": "ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c4",
+                    "message": "Advert Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/advertisement?id=ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c6"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementdeleted": false,
+                    "id": "ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c6",
+                    "message": "Unable to Delete Advert!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/textbook?id=a92f76ac-ef77-4f5f-aa12-f42e77f169b5"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Textbookdeleted": true,
+                    "id": "a92f76ac-ef77-4f5f-aa12-f42e77f169b5",
+                    "message": "textbook Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/textbook?id=a92f76ac-ef77-4f5f-aa12-f42e77f169b2"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Textbookdeleted": false,
+                    "id": "a92f76ac-ef77-4f5f-aa12-f42e77f169b2",
+                    "message": "Unable to Delete textbook!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/accomodation?id=442cef2c-9828-4efc-a25a-842fe375838d"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Accomodationdeleted": true,
+                    "id": "442cef2c-9828-4efc-a25a-842fe375838d",
+                    "message": "accomodation Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/accomodation?id=442cef2c-9828-4efc-a25a-842fe3758382"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Accomodationdeleted": false,
+                    "id": "442cef2c-9828-4efc-a25a-842fe3758382",
+                    "message": "Unable to Delete accomodation!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/tutor?id=0d56865d-0e89-4e35-987d-c17fb29958f5"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Tutordeleted": true,
+                    "id": "0d56865d-0e89-4e35-987d-c17fb29958f5",
+                    "message": "tutor Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/tutor?id=0d56865d-0e89-4e35-987d-c17fb29958f2"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Tutordeleted": false,
+                    "id": "0d56865d-0e89-4e35-987d-c17fb29958f2",
+                    "message": "Unable to Delete tutor!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/note?id=2a5a47a9-97e0-499f-b0f1-afc1876a6d63"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Notedeleted": true,
+                    "id": "2a5a47a9-97e0-499f-b0f1-afc1876a6d63",
+                    "message": "note Successfully Deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "DELETE",
+                "url": "/crud/note?id=2a5a47a9-97e0-499f-b0f1-afc1876a6d62"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "Notedeleted": false,
+                    "id": "2a5a47a9-97e0-499f-b0f1-afc1876a6d62",
+                    "message": "Unable to Delete note!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/advertisement",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "id" : "68a8e6fe-d557-421a-acc9-614e7385d727",
+                        "userid": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "isselling" : "false",
+                        "advertisementtype": "TXB",
+                        "entityid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                        "price": "250",
+                        "description": "Update Mockwire Test"}
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementupdated": true,
+                    "message": "Advert Successfully Updated"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/advertisement",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "id" : "ce74f50f-bedf-4a8b-bc8a-c8ac15f0b5c4",
+                        "userid": "12327ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "isselling" : "false",
+                        "advertisementtype": "TXB",
+                        "entityid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                        "price": "250",
+                        "description": "Update Mockwire Test"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "advertisementupdated": false,
+                    "message": "This Advertisement is deleted!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/advertisement?id=68a8e6fe-d557-421a-acc9-614e7385d727"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id": "68a8e6fe-d557-421a-acc9-614e7385d727",
+                    "userid": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                    "isselling": false,
+                    "advertisementtype": "TXB",
+                    "entityid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                    "price": "250",
+                    "description": "Update Mockwire Test",
+                    "message": "This advertisement exists"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/advertisement?id=68a8e6fe-d557-421a-acc9-614e7385d721"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "id": "",
+                    "userid": "00000000-0000-0000-0000-000000000000",
+                    "isselling": false,
+                    "advertisementtype": "none",
+                    "entityid": "00000000-0000-0000-0000-000000000000",
+                    "price": "0",
+                    "description": "none",
+                    "message": "This advertisement does not exist"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/advertisementtype?adverttype=TXB&price=9999&limit=&selling=true&modulecode=&name=&edition=&quality=&author=&subject=&yearcompleted=&venue=&notes=&terms=&acdType=&location=&distance=&institution=Pretoria"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "textbooks": [
+                        {
+                            "advertisementid": "d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+                            "userid": "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                            "isselling": true,
+                            "advertisementtype": "TXB",
+                            "price": "450.00",
+                            "description": "This is business strategy principles, contact now to secure this book which is in amazing condition",
+                            "textbookid": "382e4fbb-5b63-4a1a-b3ee-162e256e861b",
+                            "textbookname": "Business Strategy Principles",
+                            "edition": "1",
+                            "quality": "Used",
+                            "author": "Franklin James",
+                            "modulecode": "OBS110",
+                            "institutionname": "University of Pretoria"
+                        },
+                        {
+                            "advertisementid": "9d849400-2320-4133-948c-14241b7ee410",
+                            "userid": "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                            "isselling": true,
+                            "advertisementtype": "TXB",
+                            "price": "300.00",
+                            "description": "This is the calculus follow up course textbook! Contact me ASAP, priced to go",
+                            "textbookid": "64a4c6c0-bf8e-4728-a650-579003bc6857",
+                            "textbookname": "Calculus Follow-up",
+                            "edition": "3",
+                            "quality": "New",
+                            "author": "George Shabangu",
+                            "modulecode": "ENG122",
+                            "institutionname": "University of Pretoria"
+                        },
+                        {
+                            "advertisementid": "155ae020-1499-4e33-aaea-bbd343931cc6",
+                            "userid": "7bb9d62d-c3fa-4e63-9f07-061f6226cebb",
+                            "isselling": true,
+                            "advertisementtype": "TXB",
+                            "price": "500.00",
+                            "description": "Business strategy advanced is the subject to do! get this amazing textbook now.",
+                            "textbookid": "7dda5091-4a6e-42dd-b6e1-7ccc8be7e5cd",
+                            "textbookname": "Business Strategy Advanced",
+                            "edition": "1",
+                            "quality": "Used",
+                            "author": "Jon Snow",
+                            "modulecode": "OBS120",
+                            "institutionname": "University of Pretoria"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/filemanager/cardimagebatch"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "images": [
+                        {
+                            "entityid" : "d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+                            "imagebytes" : "Wxy6152dths6akgka7qT"
+                        },
+                        {
+                            "entityid" : "9d849400-2320-4133-948c-14241b7ee410",
+                            "imagebytes" : "Wxy6152dths6akgka7qT"
+                        },
+                        {
+                            "entityid" : "155ae020-1499-4e33-aaea-bbd343931cc6",
+                            "imagebytes" : "Wxy6152dths6akgka7qT"
+                        }
+                    ]
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
         }
+        
+
+        
         
     ]
 }
-
 
