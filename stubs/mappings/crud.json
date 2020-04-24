@@ -361,7 +361,7 @@
                     "Content-Type": "application/json"
                 }
             }
-        },
+        }, 
         {
             "request": {
                 "method": "GET",
@@ -1591,9 +1591,177 @@
                     "Content-Type": "application/json"
                 }
             }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/otp?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7&phonenumber=27824413098"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": true,
+                    "Message": "An OTP has successfully been sent to your phone!",
+                    "phonenumber": "27824413098",
+                    "otp": "6648"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/otp?userid=7bb9d62d-c3fa-4e63-9f07-061f6226cebb&phonenumber=27824413098"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "This number has already been used to validate an account",
+                    "phonenumber": "0",
+                    "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/otp?userid=77f65b92-67e3-4722-99f2-0e775d9ee699&phonenumber=27826678435"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "An OTP has already been sent to this number. Try the resend OTP option if you did not recieve an OTP.",
+                    "phonenumber": "00",
+                    "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/otp?userid=f77fcc1d-fe67-4c28-b4bf-b86a35b9f8b4&phonenumber=27836647826"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "An OTP has already been validated by this number. Try the resend OTP option if you did not recieve an OTP.",
+                    "phonenumber": "000",
+                    "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/otp",
+                "bodyPatterns" : [ {
+                    "equalToJson" : { 
+                        "userid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "otp" : "6648"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "validated": true,
+                    "Message": "Your account has been successfully verified. You have been granted 3 free advertisements"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "PUT",
+                "url": "/crud/otp",
+                "bodyPatterns" : [ {
+                    "equalToJson" :  { 
+                        "userid" : "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7",
+                        "otp" : "81537"
+                    }
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "validated": false,
+                    "Message": "The OTP you entered is incorrect."
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/newotp?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7&phonenumber=27824413098"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": true,
+                    "Message": "A new OTP has successfully been sent to your phone!",
+                    "phonenumber": "27824413098",
+                    "otp": "6648"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/newotp?userid=cda4e002-e16d-4df6-aa55-f58683672116&phonenumber=27872264832"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "Your account has already been verified!",
+                    "phonenumber": "0000",
+                    "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/newotp?userid=acd5eecb-5664-4a03-a97d-0742b46a18a8&phonenumber=27835568435"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "An OTP has already been sent again. Please wait a few minutes as a delay can sometimes occur.",
+                    "phonenumber": "00000",
+                    "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
         }
-        
-
         
         
     ]

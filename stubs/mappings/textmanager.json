@@ -1,0 +1,158 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "27824413098",
+                        "message" : "Your Study Money OTP is: 6648"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": true,
+                    "Message": "An OTP has successfully been sent to your phone!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "0",
+                        "message" : "Your Study Money OTP is: None"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "This number has already been used to validate an account"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },   
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "00",
+                        "message" : "Your Study Money OTP is: None"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "An OTP has already been sent to this number. Try the resend OTP option if you did not recieve an OTP."
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },  
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "000",
+                        "message" : "Your Study Money OTP is: None"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": true,
+                    "Message": "An OTP has already been validated by this number. Try the resend OTP option if you did not recieve an OTP."
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "27824413098",
+                        "message" : "Your Study Money OTP is: 67548"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": true,
+                    "Message": "A new OTP has successfully been sent to your phone!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "0000",
+                        "message" : "Your Study Money OTP is: None"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "Your account has already been verified!"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/textmanager/text",
+                "bodyPatterns" : [ {
+                    "equalToJson" : {
+                        "number" : "00000",
+                        "message" : "Your Study Money OTP is: None"
+                    }                    
+                  } ]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "sent": false,
+                    "Message": "An OTP has already been sent again. Please wait a few minutes as a delay can sometimes occur."
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        }
+    ]
+}
