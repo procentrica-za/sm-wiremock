@@ -396,7 +396,7 @@
             "response": {
                 "status": 200,
                 "jsonBody": {
-                    "chatposted": true,
+                    "chatposted": true, 
                     "chatid": "560a8a71-339d-4769-ba8b-27bdcfde4e59",
                     "message": "Chat Successfully Started!"
                 }, 
@@ -1756,6 +1756,36 @@
                     "Message": "An OTP has already been sent again. Please wait a few minutes as a delay can sometimes occur.",
                     "phonenumber": "00000",
                     "otp": "None"
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/status?userid=56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "isverified": false
+                }, 
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/crud/status?userid=840c9cb4-d5f6-4468-868c-c324cc85d42c"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "isverified": true
                 }, 
                 "headers": {
                     "Content-Type": "application/json"
